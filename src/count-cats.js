@@ -14,7 +14,14 @@ import { NotImplementedError } from '../extensions/index.js';
  * ]) => 3`
  *
  */
-export default function countCats(/* matrix */) {
-  throw new NotImplementedError('Not implemented');
+
+
+
+export default function countCats(arr) {
+  // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
+  return arr.reduce((acc, ar)=> {
+    const num = ar.reduce((ac, item)=> item === '^^'? ac +=1 : ac,0)
+    return acc+=num
+},0)
 }
